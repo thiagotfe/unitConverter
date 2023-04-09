@@ -6,10 +6,11 @@ dotenv.config();
 
 import express from 'express';
 import lengthRoutes from './routes/lengthRoutes';
+import temperatureRoutes from './routes/temperatureRoutes';
 
 const corsOptions = {
-  origin: '*'
-}
+  origin: '*',
+};
 
 class App {
   constructor() {
@@ -20,13 +21,14 @@ class App {
 
   middlewares() {
     this.app.use(cors(corsOptions));
-    this.app.use(helmet({crossOriginEmbedderPolicy: false}));
+    this.app.use(helmet({ crossOriginEmbedderPolicy: false }));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
   }
 
   routes() {
     this.app.use('/length', lengthRoutes);
+    this.app.use('/temperature', temperatureRoutes);
   }
 }
 
