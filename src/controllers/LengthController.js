@@ -136,7 +136,7 @@ class LengthController {
       // VALIDATIONS
       // eslint-disable-next-line prefer-const
       let errors = [];
-      if (!value || !Number.isFinite(value)) {
+      if (!Number.isFinite(value)) {
         errors.push('value are required and must be integer or float');
       }
 
