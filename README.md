@@ -97,7 +97,7 @@
 
 **Conditions:**
 - `value` is `required` and must be `integer` or `float`
-- `unit_in` and `unit_out` are required and must be `string` must be string and one of this letters: `C`, `F`, or `K`.
+- `unit_in` and `unit_out` are required, must be `string` and one of this letters: `C`, `F`, or `K`.
 - `value` must be greater than or equal to the minimum possible value for `unit_in`.
 
 **Content Example:**
