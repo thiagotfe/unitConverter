@@ -67,7 +67,7 @@ class TemperaturaController {
         errors.push(`unit_in are required, must be string and one of this letters: ${showLetters()}`);
       }
       if (value < validUnitIn.min) {
-        errors.push(`unit_in must be more than or equal to ${validUnitIn.min} for temperatures in ${validUnitIn.name}`);
+        errors.push(`value must be greater than or equal to ${validUnitIn.min} for temperatures in ${validUnitIn.name}`);
       }
       if (!validUnitOut) {
         errors.push(`unit_out are required, must be string and one of this letters: ${showLetters()}`);

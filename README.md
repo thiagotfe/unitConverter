@@ -59,3 +59,52 @@
 	]
 }
 ```
+
+## TEMPERATURE
+**Description:** Convert units of temperature.
+
+**Url:** `/temperature/`
+
+**Method:** `POST`
+
+**Body (JSON)**:
+```
+{
+	"value": 110,
+	"unit_in":"C",
+	"unit_out":"F"
+}
+```
+**Important:** `unit_in` and `unit_out` must be `string` and one of this letters:
+- C - Celsius
+- F - Farenheit
+- K - Kelvin
+
+### Success Response:
+**Code:** `200`
+
+**Content Example:**
+```
+{
+	"value": 230,
+	"unit": "farenheit",
+	"convertedTo": "celsius to farenheit"
+}
+```
+
+### Error Responses:
+**Code**: `400`
+
+**Conditions:**
+- `value` is `required` and must be `integer` or `float`
+- `unit_in` and `unit_out` are required and must be `string` must be string and one of this letters: `C`, `F`, or `K`.
+- `value` must be greater than or equal to the minimum possible value for `unit_in`.
+
+**Content Example:**
+```
+{
+	"errors": [
+		//Error message
+	]
+}
+```
